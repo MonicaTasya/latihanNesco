@@ -1,11 +1,7 @@
-import DefaultLayout from "@/src/components/Layout/DefaultLayout";
+import FAQ from "@/src/modules/FAQ";
 
 const page = () => {
-  return (
-    <DefaultLayout className="bg-purple-500 ">
-      <p className="flex justify-center items-center min-h-screen">Akmal</p>
-    </DefaultLayout>
-  );
+  return <FAQ />;
 };
 
 export default page;
