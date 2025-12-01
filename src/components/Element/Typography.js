@@ -1,4 +1,4 @@
-import { cn } from "@/utils/helpers/cn";
+import { cn } from "../../utils/helpers/cn";
 
 const H1G = ({ className, children, ...props }) => (
   <h1
