@@ -1,0 +1,69 @@
+## Pull & Push Schema
+
+1. Checkout to develop branch
+2. Pull origin develop
+3. Create a new branch (Please read the rule below this section)
+4. Checkout to the new branch
+5. Code
+6. Commit (Please follow the commit messages rule)
+7. Pull origin develop
+8. Push origin "your branch name"
+9. Create a new pull request to develop branch and mention MonicaTasya and nastarynaz
+10. Done
+
+## Branch Naming
+
+`<type>/<short_description>.<nama_kamu>`
+
+- `<type>` :
+  - feature: saya menambahkan fitur baru
+  - fixing: saya memperbaiki fitur
+
+Contoh: feature/navbar.argy
+
+## Commit message
+
+`<type>(<scope>): <short_summary>`
+
+- `<type>` :
+  - feat: saya menambahkan fitur baru
+  - fix: saya memperbaiki fitur
+
+- `<scope>` : ini opsional
+- `<summart>` : buat sejelas mungkin
+
+Contoh: feat(Homepage): Creating about section
+
+## Folder Structure
+
+```
+- public: file public (including assets)
+- app : Contain all pages
+- src
+    - components : all components (layouts, button, navbar, etc)
+        - Contexts: custom context
+        - Element : Element kecil - kecil
+        - Layout  : Berisi Layout untuk website, default, error, dkk
+    - utils : Folder berisi fungsi - fungsi
+        - helpers : pembantu (fetch backend, etc)
+        - hooks : custom hooks
+    - modules: all views
+        - [Page name]
+            - page.js
+    - styles: kumpulan styling css
+```
+
+## Aturan Penulisan Variabel / File
+
+- Gunakan **PascalCase** untuk menulis nama komponen / file komponen website
+  DefaultLayout.js, Navbar.js
+- Gunakan **camelCase** untuk menulis nama variabel / file non komponen
+  data.js, dataFaq.js, createdAt, dkk
+- Selalu gunakan .js file! Biar keliatan rapi + seragam aja reponya.
+
+## Clean Code
+
+- [Learn More](https://github.com/ryanmcdermott/clean-code-javascript)
+- [Learn More 2](https://gist.github.com/wojteklu/73c6914cc446146b8b533c0988cf8d29#:~:text=Code%20is%20clean%20if%20it,%2C%20changeability%2C%20extensibility%20and%20maintainability.)
+
+
