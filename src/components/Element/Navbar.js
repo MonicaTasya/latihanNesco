@@ -1,59 +1,73 @@
-
-
 "use client";
 
+import Image from "next/image";
+import Link from "next/link";
 import { useState } from "react";
-import DefaultLayout from "../Layout/DefaultLayout";
+import { Button } from "../Layout/Button";
 
-const Navbar = () => {
-  const bgColors = [
-    "bg-dark-pink-300",
-    "bg-blue-300",
-    "bg-green-300",
-  ];
+const navItems = [
+  "Klasemen",
+  "Jadwal",
+  "Kontingen",
+  "Cabang Lomba",
+  "Galeri",
+  "FAQ",
+];
 
-  const [bgColor, setBgColor] = useState(bgColors[0]);
-
-  const handleChangeColor = () => {
-    const randomIndex = Math.floor(Math.random() * bgColors.length);
-    setBgColor(bgColors[randomIndex]);
-  };
+export default function Navbar() {
+  const [activeIndex, setActiveIndex] = useState(null);
 
   return (
-    <DefaultLayout className={`${bgColor} py-3!`}>
-      <nav className="flex items-center justify-between">
-        
-        {/* Logo / Brand */}
-        <div className="font-semibold text-lg">
-          LOGO
-        </div>
+    <nav className="w-full border-b-2 border-neutral-200 bg-white">
+      <div className="max-w-[1440px] mx-auto flex items-center justify-between px-6 h-[97px]">
 
-        {/* Menu Navbar */}
-        <ul className="flex gap-6 text-sm font-medium">
-          <li className="cursor-pointer hover:underline">Klasemen</li>
-          <li className="cursor-pointer hover:underline">Jadwal</li>
-          <li className="cursor-pointer hover:underline">Kontingen</li>
-          <li className="cursor-pointer hover:underline">Cabang Lomba</li>
-          <li className="cursor-pointer hover:underline">Galeri</li>
-          <li className="cursor-pointer hover:underline">FAQ</li>
+        {/* LOGO */}
+       <Image src="/images/logo.png" alt="Logo" width={40} height={40} />
+
+
+        {/* MENU */}
+        <ul className="flex items-center gap-8">
+          {navItems.map((item, index) => (
+            <li
+              key={item}
+              className="relative cursor-pointer"
+              onClick={() => setActiveIndex(index)}
+            >
+              <span
+                className={`text-sm font-medium transition-colors
+                  ${
+                    activeIndex === index
+                      ? "text-blue-600"
+                      : "text-neutral-800"
+                  }
+                `}
+              >
+                {item}
+              </span>
+
+              {/* GARIS BAWAH */}
+              <span
+                className={`absolute left-0 -bottom-2 h-[2px] w-full rounded-full transition-all duration-300
+                  ${
+                    activeIndex === index
+                      ? "bg-blue-600 scale-x-100"
+                      : "bg-blue-600 scale-x-0"
+                  }
+                `}
+              />
+            </li>
+          ))}
         </ul>
 
-        {/* Button Ganti Warna */}
-        <button
-          onClick={handleChangeColor}
-          className="px-3 py-1 text-sm bg-white rounded"
-        >
-          Ganti Warna
-        </button>
-      </nav>
-    </DefaultLayout>
+        {/* ACTION */}
+        <div className="flex items-center gap-4">
+          <Button variant="blue" size="smIcon">🔔</Button>
+          <Button variant="blue" size="sm">🎮 Permainan</Button>
+        </div>
+
+      </div>
+    </nav>
   );
-};
-
-export default Navbar;
-
-
-
-
+}
 
 
