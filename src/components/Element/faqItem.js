@@ -7,7 +7,7 @@ const FaqItem = ({ question, answer }) => {
   return (
     <div
       onClick={() => setOpen(!open)}
-      className="bg-purple-600 text-white p-4 cursor-pointer transition-all duration-300"
+      className="bg-purple-600 text-white p-4 cursor-pointer transition-all duration-300 w-full"
     >
       <div className="flex justify-between items-center">
         <p className="text-sm">{question}</p>

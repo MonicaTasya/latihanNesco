@@ -24,6 +24,14 @@ const FAQ = () => {
     return matchCategory && matchSearch;
   });
 
+  const categoryTitles = {
+    umum: "Umum",
+    olahraga: "Cabang Olahraga",
+    seni: "Tangkai Seni",
+  };
+
+  const categories = ["umum", "olahraga", "seni"];
+
   return (
     <DefaultLayout
       className="bg-white"
@@ -80,14 +88,32 @@ const FAQ = () => {
           </div>
         </div>
         <hr className="my-3 border-black border"></hr>
-        <div className="flex flex-col gap-3 pb-3 sm:grid sm:grid-cols-2">
-          {filteredFaq.map((item) => (
-            <FaqItem
-              key={item.id}
-              question={item.question}
-              answer={item.answer}
-            />
-          ))}
+
+        <div className="pb-3">
+          {categories.map((cat) => {
+            const categoryFaq = filteredFaq.filter(
+              (item) => item.category === cat
+            );
+
+            if (categoryFaq.length === 0) return null;
+
+            return (
+              <div key={cat} className="mb-6">
+                <h2 className="text-black text-sm mb-3">
+                  {categoryTitles[cat]}
+                </h2>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:auto-rows-min">
+                  {categoryFaq.map((item) => (
+                    <FaqItem
+                      key={item.id}
+                      question={item.question}
+                      answer={item.answer}
+                    />
+                  ))}
+                </div>
+              </div>
+            );
+          })}
         </div>
       </div>
     </DefaultLayout>
