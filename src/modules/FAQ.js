@@ -34,6 +34,15 @@ const FAQ = () => {
         backgroundPosition: "center",
         backgroundAttachment: "fixed",
       }}
+      decoration={
+        <Image
+          src="/images/panggung-FAQ.png"
+          alt="ornamen FAQ"
+          width={150}
+          height={150}
+          className="absolute w-90 -bottom-2.5"
+        />
+      }
     >
       <div className="bg-white w-full min-h-screen border border-gray-400 shadow-[8px_8px_0px_0px_#7147C4] px-4 pt-4">
         <p className={`text-black pb-4 text-xl ${KomikazoomRegular.className}`}>
@@ -58,7 +67,7 @@ const FAQ = () => {
             </Button>
             <Button
               variant="purple"
-              className={`text-xs h-8 px-3 ${GeologicaLight.className}`}
+              className="text-xs h-8 px-3 font-geologica-light"
               onClick={() => setCategory("umum")}
             >
               Umum
