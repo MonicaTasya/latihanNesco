@@ -1,14 +1,15 @@
 import DefaultLayout from "../components/Layout/DefaultLayout";
 import { Button } from "../components/Layout/Button";
 import Image from "next/image";
-import { H5K, B1K } from "../components/Element/Typography";
+import { B1G,B2G,B3G,B4G,B5G,H5K,H7K } from "../components/Element/Typography";
+import { Bell, MoveUpRight } from 'lucide-react';
 
 const Hero = () => {
   const klasemenData = [
     { rank: 1, name: "F.AYASHA", c1: 10, c2: 10, c3: 10, bg: "bg-yellow-100" },
     { rank: 2, name: "F.MELINDA", c1: 10, c2: 10, c3: 10, bg: "bg-white" },
     { rank: 3, name: "F.TASYA", c1: 10, c2: 10, c3: 10, bg: "bg-yellow-100" },
-    { rank: 4, name: "Pascasarjana", c1: 10, c2: 10, c3: 10, bg: "bg-white" },
+    { rank: 4, name: "PASCASARJANA", c1: 10, c2: 10, c3: 10, bg: "bg-white" },
     { rank: 5, name: "FKKMK", c1: 10, c2: 10, c3: 10, bg: "bg-yellow-100" },
   ];
 
@@ -55,7 +56,7 @@ const Hero = () => {
     },
   ];
   return (
-    <DefaultLayout
+    <DefaultLayout className="bg-white overflow-hidden"
       decoration={
         <>
           <Image
@@ -70,205 +71,204 @@ const Hero = () => {
             width={500}
             height={500}
             alt="decoration hero"
-            className="absolute top-0 right-0 w-[250px] h-auto"
+            className="absolute top-0 lg:-right-20 -right-30 w-[250px] h-auto"
           />
+          
+          <Image
+          src="/images/fance.webp"
+          width={500}
+          height={500}
+          alt="tangga"
+          className="absolute lg:w-full lg:pt-100 z-10 bottom-0"/>
+
+          <Image
+          src="/images/makhlukNgeband.webp"
+          width={100}
+          height={100}
+          alt="band"
+          className="absolute lg:w-[200px] bottom-0"/>
+
+          <Image
+          src="/images/makhlukNyinden.webp"
+          width={40}
+          height={40}
+          alt="nyanyi"
+          className="absolute z-5 lg:w-[100px] left-[8%] rotate-6 bottom-3"/>
+
+          <Image
+          src="/images/makhlukKarate.webp"
+          width={70}
+          height={70}
+          alt="karate"
+          className="absolute lg:w-[150px] left-[80%] z-5 bottom-3"/>
+
+          <Image
+          src="/images/redboom.webp"
+          width={70}
+          height={70}
+          alt="boom"
+          className="absolute hidden md:block w-[180px] left-[90%] top-120"/>
+
+          <Image
+          src="/images/bola.webp"
+          width={70}
+          height={70}
+          alt="bola"
+          className="absolute hidden md:block w-[60px] left-[95%] top-130"/>
         </>
       }
     >
-      {/* petir + hipnotis
-      <Image
-        className="absolute top-[3px] left-0 lg:left-[-30px] w-[130px] lg:w-[270px] h-auto z-0"
-        src="/images/jenitsu.webp"
-        width={100}
-        height={100}
-        alt="Petir biru"
-      />
-      <Image
-        className="absolute top-[3px] right-0 lg:right-[-60px] w-[150px] lg:w-[380px] h-auto z-0"
-        src="/images/circleYellow.webp"
-        width={100}
-        height={100}
-        alt="Lingkaran kuning"
-      /> */}
 
-      {/* section 1+2 wrap buat desktop */}
+
+      {/* container 1+2 */}
       <div>
-        {/* klasemen */}
-        <div className="flex flex-row gap-5 justify-center items-center">
-          <div className="flex flex-col shadow-offset-purple basis-1/2 p-3 border-2 border-neutral-300 bg-neutral-100">
-            <div className="flex justify-between items-center mb-4">
-              <p className="text-black font-komikazoom-regular text-sm lg:text-lg uppercase">
-                Klasemen teratas
-              </p>
-              <Button className="w-[120px] lg:w-[140px] h-[30px] text-[10px] bg-[#41257d] text-white">
-                Lihat Semuanya ↗
+        {/* container 1 */}
+        <div className="flex flex-col w-full lg:flex-row-reverse gap-8 justify-center items-stretch pt-20 px-0 lg:px-10">
+          {/* Meriahkan Gadjah Mada */}
+          <div className="relative flex flex-row shadow-offset-purple basis-full lg:basis-3/4 border-2 border-[#41257d] bg-white rounded-sm overflow-visible p-3">
+            <div className="basis-1/2 z-10">
+            <H5K className="text-black pb-4">
+            Bersiaplah untuk Meriahkan Gadjah Mada
+            </H5K>
+            <B2G className="text-black">
+            Dapatkan informasi terbaru dan ikuti keseruan Porsenigama 2025.
+            </B2G>
+            <Button className="mt-6 bg-purple-700 flex items-center justify-center gap-2">
+            Aktifkan Notifikasi <Bell/>
+            </Button>
+            </div>
+
+          
+          {/* makhlukNgebasket */}
+          <div className="absolute lg:w-[350px] w-[300px] left-[50%] lg:left-[60%] lg:top-[1%] -top-[10%] pointer-events-none">
+          <Image
+          src="/images/jordan.webp" 
+          width={500}
+          height={500}
+          alt="basket"
+          className="relative z-10 w-full h-auto"
+          />
+          </div>
+        </div>
+
+          {/* Klasemen */}
+          <div className="flex flex-col shadow-offset-purple basis-full lg:basis-1/2 p-5 border-2 border-[#41257d] bg-white rounded-sm">
+            <div className="flex justify-between items-center mb-6">
+              <H7K className="text-black">
+              Klasemen teratas
+              </H7K>
+              <Button className="flex items-center gap-2 px-4 h-[35px] text-[12px] bg-[#4b308e] text-white rounded-lg uppercase font-bold">
+              Lihat Semuanya <MoveUpRight/>
               </Button>
             </div>
-            <div className="flex flex-col gap-1">
-              <div className="grid grid-cols-[1.5fr_3fr_1fr_1fr_1fr_0.5fr] items-center px-2 text-neutral-800">
-                <span>rank</span>
-                <span>klasemen</span>
-                <span className="text-center">🥇</span>
-                <span className="text-center">🥈</span>
-                <span className="text-center">🥉</span>
+
+            <div className="flex flex-col">
+              {/* Header Tabel */}
+              <div className="grid grid-cols-[1fr_2.3fr_1fr_1fr_1fr_0.5fr] items-center px-3 py-2 text-[#41257d] font-bold text-xs uppercase">
+                <span>Rank</span>
+                <span>Kontingen</span>
+                <span className="text-center">1st</span>
+                <span className="text-center">2nd</span>
+                <span className="text-center">3rd</span>
                 <span></span>
               </div>
-              {klasemenData.map((item, i) => (
-                <div
-                  key={i}
-                  className={`grid grid-cols-[1.5fr_3fr_1fr_1fr_1fr_0.5fr] items-center px-2 h-[42px] ${item.bg} text-[11px] font-geologica text-black border-b border-gray-100 last:border-0`}
-                >
-                  <span>{item.rank}</span>
-                  <span className="truncate">{item.name}</span>
-                  <span className="text-center">{item.c1}</span>
-                  <span className="text-center">{item.c2}</span>
-                  <span className="text-center">{item.c3}</span>
-                  <span className="text-right text-gray-400">›</span>
-                </div>
-              ))}
-            </div>
-          </div>
-          {/* container meriahkan gajah madaaa yeayy */}
-          <div className="flex flex-row shadow-offset-purple overflow-visible basis-1/2 border-2 border-neutral-300 bg-neutral-100">
-            <div className="p-4 basis-1/2">
-              <H5K>Bersiaplah untuk Meriahkan Gadjah Mada</H5K>
-              <B1K>
-                Dapatkan informasi terbaru dan ikuti keseruan Porsenigama 2025.
-              </B1K>
-              <Button className="mt-4 lg:mt-10 w-[180px] lg:w-[220px] h-[37px] lg:h-[45px] bg-[#41257d] text-white rounded-md">
-                Aktifkan Notifikasi 🔔
-              </Button>
-            </div>
-            <div>
-              {/* <Image
-                src="/images/boomBlue.webp"
-                width={500}
-                height={500}
-                alt="boom"
-                className="w-3xl"
-              /> */}
-              <Image
-                src="/images/jordan.webp"
-                width={500}
-                height={500}
-                alt="basket"
-                className="absolute w-[300px] h-auto"
-              />
+
+              {/* Body Tabel */}
+              <div className="flex flex-col gap-1">
+                {klasemenData.map((item, i) => (
+                  <div
+                    key={i}
+                    className={`grid grid-cols-[0.7fr_2.5fr_1fr_1fr_1fr_0.5fr] items-center px-3 h-[48px] ${
+                      i % 2 === 0 ? "bg-[#fffce4]" : "bg-white"
+                    } text-sm font-geologica text-black rounded-sm`}
+                  >
+                    <span className="font-bold">{item.rank}</span>
+                    <span className="font-semibold">{item.name}</span>
+                    <span className="text-center">{item.c1}</span>
+                    <span className="text-center">{item.c2}</span>
+                    <span className="text-center">{item.c3}</span>
+                    <span className="text-right text-black font-bold text-lg">›</span>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>
 
-        {/* congtainer jadwal terdekat */}
-        {/* <div className="absolute top-[661px] lg:top-[510px] left-[17px] right-[17px] lg:left-0 lg:w-[800px] h-[396px] bg-white border-2 border-gray-200 z-10 lg:shadow-[8px_8px_0px_0px_#7147C4]">
-          <div className="p-4 lg:p-6">
-            <div className="flex justify-between items-center mb-4">
-              <p className="text-black font-komikazoom-regular text-lg uppercase">
-                Jadwal Terdekat
-              </p>
-              <Button className="w-[160px] h-[33px] bg-[#41257d] text-white text-[10px]">
-                Lihat Semua Jadwal ↗
-              </Button>
+      {/* container 2 */}
+      <div className="flex flex-col w-full lg:flex-row justify-center items-stretch lg:px-5 py-10 lg:pb-30">
+        <div className="relative flex flex-col shadow-offset-purple basis-full lg:basis-3/4 border-2 border-[#41257d] bg-white rounded-sm overflow-visible lg:mx-5 p-3">
+          <div className="flex flex-row justify-between items-center">
+          <H7K className="text-black">
+            Jadwal Terdekat
+          </H7K>
+          <Button className="flex items-center gap-2 px-4 h-[35px] text-[12px] bg-[#4b308e] text-white rounded-lg uppercase font-bold">
+              Lihat Semua Jadwal <MoveUpRight/>
+          </Button>
+          </div>
+            {/* Header */}
+            <div className="grid grid-cols-[1.2fr_2.3fr_1.7fr_0.1fr] lg:grid-cols-[1fr_0.8fr_2fr_2fr_1.5fr] items-center px-3 pb-2 pt-5 text-[#41257d] font-bold text-xs uppercase">
+              <span className="hidden lg:block text-left">Tanggal</span>
+              <span className="text-left">Waktu</span>
+              <span className="text-left">Cabang Lomba</span>
+              <span className="text-left">Pertandingan</span>
+              <span className="hidden lg:block text-left">Lokasi</span>
             </div>
-            <div className="grid grid-cols-[1.2fr_1fr_1.5fr_1.2fr] lg:grid-cols-[1fr_0.8fr_1fr_1.5fr_1fr] px-4 py-2 text-[10px] font-geologica text-black border-b uppercase">
-              <span className="hidden lg:block">Tanggal</span>
-              <span>Waktu</span>
-              <span>Cabang</span>
-              <span>Pertandingan</span>
-              <span className="hidden lg:block">Lokasi</span>
-            </div>
-            <div className="overflow-y-auto h-[280px]">
+
+            <div className="flex flex-col gap-1">
               {jadwalData.map((item, i) => (
                 <div
                   key={i}
-                  className={`grid grid-cols-[1.2fr_1fr_1.5fr_1.2fr] lg:grid-cols-[1fr_0.8fr_1fr_1.5fr_1fr] gap-2 items-center px-4 py-3 ${item.bg} text-[11px] font-geologica text-black`}
+                  className={`grid grid-cols-[1.2fr_2.3fr_1.7fr_0.1fr] lg:grid-cols-[1fr_0.8fr_2fr_2fr_1.5fr] items-center px-3 h-[48px] ${
+                    i % 2 === 0 ? "bg-[#fffce4]" : "bg-white"
+                  } text-[12px] lg:text-sm font-geologica text-black rounded-sm`}
                 >
-                  <span className="hidden lg:block text-black">
-                    {item.tanggal}
-                  </span>
-                  <div className="flex flex-col lg:flex-row lg:gap-2">
-                    <span>{item.waktu}</span>
-                    <span className="lg:hidden text-[9px]">{item.tanggal}</span>
-                  </div>
-                  <span>{item.cabang}</span>
-                  <span>{item.info}</span>
-                  <span className="hidden lg:block text-black">
-                    {item.lokasi}
-                  </span>
+                  <span className="hidden lg:block text-left">{item.tanggal}</span>
+                  <span className="text-left">{item.waktu}</span>
+                  <span className="text-left font-semibold">{item.cabang}</span>
+                  <span className="text-left">{item.info}</span>
+                  <span className="hidden lg:block text-left truncate" title={item.lokasi}>{item.lokasi}</span>
                 </div>
               ))}
             </div>
-          </div>
-        </div> */}
+        </div>
 
-        {/* congtainer hasil terbaru */}
-        {/* <div className="absolute top-[1081px] lg:top-[550px] lg:right-0 lg:w-[360px] w-full px-4 lg:px-0">
-          <img
-            className="hidden lg:block lg:w-[300px] lg:right-[-120px] lg:h-auto lg:absolute lg:top-[-100px]"
-            src="/images/redBoom.webp"
-            alt="merah"
-          ></img>
-          <img
-            className="hidden lg:block lg:w-[80px] lg:right-[-20px] lg:h-auto lg:absolute lg:top-[-36px]"
-            src="/images/bola.webp"
-            alt="bola"
-          ></img>
-          <p className="font-komikazoom-regular text-black mb-3 text-lg uppercase">
-            Hasil Terbaru
-          </p>
-          <div className="flex flex-row lg:flex-col gap-6 lg:gap-5 overflow-x-auto lg:overflow-visible pb-4 no-scrollbar snap-x snap-mandatory">
-            {[1, 2].map((item) => (
-              <div
-                key={item}
-                className="relative flex-shrink-0 w-[294px] lg:w-full snap-center"
-              >
-                <div className="relative z-10 bg-[#2e1a47] p-4 text-white h-[115px]">
-                  <div className="flex justify-between border-b border-white/20 pb-2 mb-2 text-[10px] font-geologica">
-                    <span>Dayung Slalom</span>
-                    <span>26 Aug, 09:13</span>
-                  </div>
-                  <div className="flex justify-between items-end">
-                    <div>
-                      <p className="text-[9px] opacity-70">Juara 1</p>
-                      <p className="text-[18px] font-geologica uppercase tracking-tighter">
-                        Pascasarjana
-                      </p>
-                    </div>
-                    <div className="text-[9px] text-right leading-tight font-geologica">
-                      <p>Juara 1: FKKMK</p>
-                      <p>Juara 2: Vokasi</p>
-                    </div>
-                  </div>
-                </div>
-                <div className="absolute top-[6px] left-[6px] w-full h-full bg-[#7147C4] z-0"></div>
+        <div className="flex flex-row lg:flex-col overflow-x-auto lg:overflow-x-visible gap-5 pt-5 pb-3">
+          <div className="relative flex flex-col shadow-offset-purple basis-full lg:basis-1/4 border-2 border-[#41257d] bg-purple-900 rounded-sm p-3">
+            <div className="flex flex-row justify-between items-center w-[350px] h-auto pb-2 border-b-2 border-white">
+            <B3G>Dayung Slalom</B3G>
+            <B3G>26 Aug, 09:30</B3G>
+            </div>
+            <div className="flex flex-row justify-between items-center py-3">
+              <div className="flex flex-col">
+              <B5G>Juara 1</B5G>
+              <B1G>PASCASARJANA</B1G>
               </div>
-            ))}
+              <div className="flex flex-col">
+              <B4G>Juara 2 FKKMK</B4G>
+              <B4G>Juara 3 Vokasi</B4G>
+              </div>
+            </div>
           </div>
-        </div> */}
+          <div className="relative flex flex-col shadow-offset-purple basis-full lg:basis-1/4 border-2 border-[#41257d] bg-purple-900 rounded-sm overflow-visible p-3">
+            <div className="flex flex-row justify-between items-center w-[350px] h-auto pb-2 border-b-2 border-white">
+            <B3G>Dayung Slalom</B3G>
+            <B3G>26 Aug, 09:30</B3G>
+            </div>
+            <div className="flex flex-row justify-between items-center py-3">
+              <div className="flex flex-col">
+              <B5G>Juara 1</B5G>
+              <B1G>PASCASARJANA</B1G>
+              </div>
+              <div className="flex flex-col">
+              <B4G>Juara 2 FKKMK</B4G>
+              <B4G>Juara 3 Vokasi</B4G>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-
-      {/* bagian jembatan, notes: kak, ini di code ga ada padding tapi pas nge-render/run di localhost ada padding jauh, jdi kubikin paddingnya ada yg minus*/}
-      {/* <div className="relative top-[1210px] lg:p-0 lg:mb-0 lg:top-[960px] bottom-0 left-0 lg:left-[-40px] w-full lg:w-[1440px] h-[100px] pointer-events-none z-30">
-        <img
-          className="absolute bottom-0 lg:bottom-[-19.7px] h-[49px] lg:h-[100px] lg:w-[1355px] z-20 object-cover"
-          src="/images/fance.webp"
-          alt="fence"
-        />
-        <img
-          className="absolute bottom-[3px] lg:bottom-[-25px] left-[40%] lg:left-[38%] w-[70px] lg:w-[200px] h-auto z-10"
-          src="/images/makhlukNgeband.webp"
-          alt="band"
-        />
-        <img
-          className="absolute bottom-[10px] lg:bottom-[20px] left-[1%] w-[35px] lg:w-[120px] h-auto rotate-6 z-10"
-          src="/images/makhlukNyinden.webp"
-          alt="nyanyi"
-        />
-        <img
-          className="absolute bottom-[15px] lg:bottom-[-20px] right-[5%] w-[50px] lg:w-[180px] lg:right-[18%] h-auto z-10"
-          src="/images/makhlukKarate.webp"
-          alt="karate"
-        />
-      </div> */}
+    </div>
     </DefaultLayout>
   );
 };
